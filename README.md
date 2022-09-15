@@ -20,5 +20,5 @@ yarn build
 yarn lint
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+### View in production
+[https://tracker.fawacom.com.br/](https://tracker.fawacom.com.br/).
