@@ -1,4 +1,4 @@
-# alura-tracker
+# wr2-tracker
 
 ## Project setup
 ```
