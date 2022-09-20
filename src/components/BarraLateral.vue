@@ -6,6 +6,20 @@
     <button class="button is-dark" @click="alterarTema">
       {{textoBotao}}
     </button>
+    <nav class="panel mt-5 has-text-left">
+      <ul>
+        <li>
+          <router-link to="/" class="link">
+            <i class="fas fa-tasks"></i> Tarefas
+          </router-link>
+        </li>
+        <li>
+          <router-link to="/projetos">
+            <i class="fas fa-project-diagram"></i> Projetos
+          </router-link>
+        </li>
+      </ul>
+    </nav>
   </header>
 </template>
 
@@ -17,12 +31,12 @@ export default defineComponent({
   emits: ['aoTemaAlterado'],
   data() {
     return {
-      modoEscuroAtivo: false
+      modoEscuro: false
     }
   },
   computed: {
     textoBotao () {
-      if (this.modoEscuroAtivo) {
+      if (this.modoEscuro) {
         return "Desativar modo escuro"
       }
       return "Ativar modo escuro"
@@ -30,8 +44,8 @@ export default defineComponent({
   },
   methods: {
     alterarTema() {
-      this.modoEscuroAtivo = !this.modoEscuroAtivo
-      this.$emit('aoTemaAlterado', this.modoEscuroAtivo)
+      this.modoEscuro = !this.modoEscuro
+      this.$emit('aoTemaAlterado', this.modoEscuro)
     },
   },
 })
@@ -54,5 +68,19 @@ header {
   width: 180px;
   height: auto;
   border-radius: 50%;
+}
+
+.panel li {
+  margin: 8px 0;
+}
+
+.link {
+  color: #fff;
+}
+.link:hover {
+  color: #faf0ca;
+}
+.link.router-link-active{
+  color: #faf0ca;
 }
 </style>
