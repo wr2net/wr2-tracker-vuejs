@@ -17,7 +17,7 @@
       </div>
     </div>
 
-    <div v-if="projetos">
+    <div v-if="projetos.length > 0">
       <table class="table is-fullwidth is-striped divider">
         <thead>
         <tr>
@@ -46,8 +46,10 @@
         </tbody>
       </table>
     </div>
-    <div v-else class="divider is-center">
-      <h4 class="subtitle">Nenhum registro localizado.</h4>
+    <div v-else class="divider has-text-centered">
+      <div class="notification is-warning">
+        <span class="subtitler">Nenhum registro localizado.</span>
+      </div>
     </div>
   </section>
 </template>
