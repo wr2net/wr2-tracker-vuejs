@@ -17,33 +17,38 @@
       </div>
     </div>
 
-    <table class="table is-fullwidth is-striped is-bordered divider">
-      <thead>
-      <tr>
-        <th>ID</th>
-        <th>Nome</th>
-        <th class="actions">Ações</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr v-for="projeto in projetos" :key="projeto.id">
-        <td>{{ projeto.id }}</td>
-        <td>{{ projeto.name }}</td>
-        <td class="actions">
-          <router-link :to="`/projetos/${projeto.id}`" class="button is-warning">
+    <div v-if="projetos">
+      <table class="table is-fullwidth is-striped divider">
+        <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nome</th>
+          <th class="actions">Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr v-for="projeto in projetos" :key="projeto.id">
+          <td>{{ projeto.id }}</td>
+          <td>{{ projeto.name }}</td>
+          <td class="actions">
+            <router-link :to="`/projetos/${projeto.id}`" class="button is-warning">
+                <span class="icon is-small">
+                  <i class="fas fa-pencil-alt"></i>
+                </span>
+            </router-link>
+            <button class="button ml-2 is-danger" @click="excluir(projeto.id)">
               <span class="icon is-small">
-                <i class="fas fa-pencil-alt"></i>
+                <i class="fas fa-trash"></i>
               </span>
-          </router-link>
-          <button class="button ml-2 is-danger" @click="excluir(projeto.id)">
-            <span class="icon is-small">
-              <i class="fas fa-trash"></i>
-            </span>
-          </button>
-        </td>
-      </tr>
-      </tbody>
-    </table>
+            </button>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+    <div v-else class="divider is-center">
+      <h4 class="subtitle">Nenhum registro localizado.</h4>
+    </div>
   </section>
 </template>
 
