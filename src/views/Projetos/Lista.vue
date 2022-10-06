@@ -57,7 +57,7 @@
 <script lang="ts">
 import { computed, defineComponent } from 'vue';
 import {useStore} from "@/store";
-import {OBTER_PROJETOS,REMOVER_PROJETO} from "@/store/tipo_acoes";
+import {OBTER_PROJETOS,REMOVER_PROJETO} from "@/store/tipo-acoes";
 
 export default defineComponent({
   name: "MyLista",
@@ -70,7 +70,7 @@ export default defineComponent({
     const store = useStore()
     store.dispatch(OBTER_PROJETOS)
     return {
-      projetos: computed(() => store.state.projetos),
+      projetos: computed(() => store.state.projeto.projetos),
       store
     }
   }

@@ -8,5 +8,25 @@
       "name": "Projeto VueJs3",
       "id": 2
     }
+  ],
+  "tarefas": [
+    {
+      "duracaoEmSegundos": 2,
+      "descricao": "teste",
+      "projeto": {
+        "name": "Projeto VueJs3",
+        "id": 2
+      },
+      "id": 1
+    },
+    {
+      "duracaoEmSegundos": 178,
+      "descricao": "Xptosasfd",
+      "projeto": {
+        "name": "Projeto VueJs3",
+        "id": 2
+      },
+      "id": 2
+    }
   ]
 }
